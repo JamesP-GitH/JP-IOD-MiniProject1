@@ -7,7 +7,9 @@ export default class MonsterParser {
         const grouped = {};
         const monsters = Object.values(this.data);
 
+        // Iterate data creation for each monster in initial data
         monsters.forEach((monster) => {
+            // grouping wanted for monster data
             let { wiki_name, combat_level, id } = monster;
             if (!wiki_name || combat_level == null) return;
             const monsterName = toTitleCase(monster.name);
@@ -15,21 +17,25 @@ export default class MonsterParser {
 
             // Normalize the wiki name
             const baseName = wiki_name.replace(/\s\(\d+\)$/, "");
+            // key for grouping monsters and to reduce down to
             const groupKey = `${baseName} (level ${combat_level})`;
 
+            // check and skip for monsters without wiki_name or combat level
             if (!wiki_name || combat_level === undefined) {
                 console.warn(`Skipping monster ${monster.name || id}: wiki_name=${wiki_name}, level=${combat_level}`);
                 return;
             }
+            // check if already exists, otherwise add new entry
             if (!grouped[groupKey]) {
                 grouped[groupKey] = {
                     wiki_name: baseName,
                     monsterData: null,
                 };
             }
-
+            // make sure examine is an array
             const examine = monster.examine ? [monster.examine] : [];
 
+            // === output data structure ===
             const stats = {
                 hitpoints: monster.hitpoints,
                 attack_bonus: monster.attack_bonus,
@@ -72,6 +78,7 @@ export default class MonsterParser {
                 wiki_url: normalizedWikiUrl,
             };
 
+            // overall structure including above structures within
             const newMonsterData = {
                 monsterName,
                 combat_level,
@@ -82,6 +89,7 @@ export default class MonsterParser {
                 metaInfo,
                 examine,
             };
+            // ==================================
 
             const group = grouped[groupKey];
 
@@ -105,7 +113,7 @@ export default class MonsterParser {
                     console.group(`Inconsistent data for "${baseName}" (ID: ${id}):`);
                     differences.forEach((diff) => console.log(` - ${diff}`));
                     console.groupEnd();
-                    return; // skip this monster
+                    return; // skip this monster if inconsistent data
                 }
 
                 existing.ids.push(id);
@@ -114,7 +122,7 @@ export default class MonsterParser {
                     existing.examine = [existing.examine]; // Convert existing string to array
                 }
                 if (examine && !existing.examine.includes(examine[0])) {
-                    existing.examine.push(examine[0]);
+                    existing.examine.push(examine[0]); // add different examine text to array rather than create new data set for monster
                 }
             } else {
                 group.monsterData = {
@@ -127,6 +135,7 @@ export default class MonsterParser {
     }
 }
 
+// helper check function for debugging
 function getDifferences(obj1, obj2, prefix = "") {
     const diffs = [];
 
@@ -156,6 +165,7 @@ function getDifferences(obj1, obj2, prefix = "") {
 
     return diffs;
 }
+// make sure text is uppercase for comparison and reduction
 function toTitleCase(str) {
     return str.replace(/\w\S*/g, (txt) => txt[0].toUpperCase() + txt.slice(1).toLowerCase());
 }
