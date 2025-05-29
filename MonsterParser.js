@@ -10,20 +10,25 @@ export default class MonsterParser {
         monsters.forEach((monster) => {
             let { wiki_name, combat_level, id } = monster;
             if (!wiki_name || combat_level == null) return;
+            const monsterName = toTitleCase(monster.name);
+            const normalizedWikiUrl = monster.wiki_url ? monster.wiki_url.split("#")[0] : "";
 
             // Normalize the wiki name
             const baseName = wiki_name.replace(/\s\(\d+\)$/, "");
+            const groupKey = `${baseName} (level ${combat_level})`;
 
             if (!wiki_name || combat_level === undefined) {
                 console.warn(`Skipping monster ${monster.name || id}: wiki_name=${wiki_name}, level=${combat_level}`);
                 return;
             }
-            if (!grouped[baseName]) {
-                grouped[baseName] = {
+            if (!grouped[groupKey]) {
+                grouped[groupKey] = {
                     wiki_name: baseName,
                     monsterData: null,
                 };
             }
+
+            const examine = monster.examine ? [monster.examine] : [];
 
             const stats = {
                 hitpoints: monster.hitpoints,
@@ -56,42 +61,39 @@ export default class MonsterParser {
             };
 
             const commonInfo = {
-                examine: monster.examine,
                 immune_poison: monster.immune_poison,
                 immune_venom: monster.immune_venom,
                 poisonous: monster.poisonous,
                 size: monster.size,
             };
 
-            const normalizedWikiUrl = monster.wiki_url ? monster.wiki_url.split("#")[0] : "";
-
             const metaInfo = {
                 members: monster.members,
-                wiki_url: monster.normalizedWikiUrl,
+                wiki_url: normalizedWikiUrl,
             };
 
             const newMonsterData = {
-                name,
+                monsterName,
                 combat_level,
                 ids: [id],
                 stats,
                 slayerInfo,
-                commonInfo: {
-                    ...commonInfo,
-                    examine: monster.examine ? [monster.examine] : [],
-                },
+                commonInfo,
                 metaInfo,
+                examine,
             };
 
-            const group = grouped[baseName];
+            const group = grouped[groupKey];
 
             if (group.monsterData) {
                 const existing = group.monsterData;
 
                 const differences = [];
 
-                if (existing.name !== name || existing.combat_level !== combat_level) {
-                    differences.push(`name/combat_level: "${existing.name}" (${existing.combat_level}) vs "${name}" (${combat_level})`);
+                if (existing.monsterName.toLowerCase() !== monsterName.toLowerCase() || existing.combat_level !== combat_level) {
+                    differences.push(
+                        `name/combat_level: "${existing.monsterName}" (${existing.combat_level}) vs "${monsterName}" (${combat_level})`
+                    );
                 }
 
                 differences.push(...getDifferences(existing.stats, stats, "stats"));
@@ -100,7 +102,7 @@ export default class MonsterParser {
                 differences.push(...getDifferences(existing.metaInfo, metaInfo, "metaInfo"));
 
                 if (differences.length > 0) {
-                    console.group(`⚠️ Inconsistent data for "${baseName}" (ID: ${id}):`);
+                    console.group(`Inconsistent data for "${baseName}" (ID: ${id}):`);
                     differences.forEach((diff) => console.log(` - ${diff}`));
                     console.groupEnd();
                     return; // skip this monster
@@ -108,22 +110,15 @@ export default class MonsterParser {
 
                 existing.ids.push(id);
 
-                if (monster.examine) {
-                    if (!Array.isArray(existing.commonInfo.examine)) {
-                        existing.commonInfo.examine = [existing.commonInfo.examine];
-                    }
-                    if (!existing.commonInfo.examine.includes(monster.examine)) {
-                        existing.commonInfo.examine.push(monster.examine);
-                    }
+                if (!Array.isArray(existing.examine)) {
+                    existing.examine = [existing.examine]; // Convert existing string to array
+                }
+                if (examine && !existing.examine.includes(examine[0])) {
+                    existing.examine.push(examine[0]);
                 }
             } else {
-                // When creating new monsterData, ensure examine is an array
                 group.monsterData = {
                     ...newMonsterData,
-                    commonInfo: {
-                        ...commonInfo,
-                        examine: monster.examine ? [monster.examine] : [],
-                    },
                 };
             }
         });
@@ -131,6 +126,7 @@ export default class MonsterParser {
         return Object.values(grouped);
     }
 }
+
 function getDifferences(obj1, obj2, prefix = "") {
     const diffs = [];
 
@@ -159,4 +155,7 @@ function getDifferences(obj1, obj2, prefix = "") {
     }
 
     return diffs;
+}
+function toTitleCase(str) {
+    return str.replace(/\w\S*/g, (txt) => txt[0].toUpperCase() + txt.slice(1).toLowerCase());
 }
