@@ -1,3 +1,4 @@
+import MonsterParser from "./MonsterParser.js";
 import ItemParser from "/ItemParser.js";
 
 fetch("https://raw.githubusercontent.com/0xNeffarion/osrsreboxed-db/master/docs/items-complete.json")
@@ -16,3 +17,14 @@ fetch("https://raw.githubusercontent.com/0xNeffarion/osrsreboxed-db/master/docs/
         console.log("Search Result for 'Excalibur':", excalibur);
     })
     .catch((error) => console.error("Error fetching or parsing JSON:", error));
+
+fetch("https://raw.githubusercontent.com/0xNeffarion/osrsreboxed-db/master/docs/monsters-complete.json")
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json);
+        const parser = new MonsterParser(json);
+
+        const newMonsterList = parser.narrowMonsterList();
+
+        console.log(newMonsterList);
+    });
