@@ -4,21 +4,15 @@ export default class ItemParser {
     }
 
     getEquipableItems() {
-        return Object.fromEntries(Object.entries(this.data).filter(([itemId, itemData]) => itemData.equipable_by_player));
+        return Object.values(this.data).filter((item) => item.equipable_by_player);
     }
 
     getEquipableWeapons() {
-        return Object.fromEntries(
-            Object.entries(this.data).filter(([itemId, itemData]) => itemData.equipable_by_player && itemData.equipable_weapon)
-        );
+        return Object.values(this.data).filter((item) => item.equipable_by_player && item.equipable_weapon);
     }
 
     getItemsBySlot(slotName) {
-        return Object.fromEntries(
-            Object.entries(this.data).filter(
-                ([itemId, itemData]) => itemData.equipable_by_player && itemData.equipment && itemData.equipment.slot === slotName
-            )
-        );
+        return Object.values(this.data).filter((item) => item.equipable_by_player && item.equipment && item.equipment.slot === slotName);
     }
 
     getItemById(itemId) {
@@ -27,8 +21,6 @@ export default class ItemParser {
 
     searchItemsByName(searchString) {
         const lowerSearch = searchString.toLowerCase().trim();
-        return Object.fromEntries(
-            Object.entries(this.data).filter(([itemId, itemData]) => itemData.name.toLowerCase().includes(lowerSearch))
-        );
+        return Object.values(this.data).filter((item) => item.name.toLowerCase().includes(lowerSearch));
     }
 }
