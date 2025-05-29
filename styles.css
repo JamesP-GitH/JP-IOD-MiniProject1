@@ -1,0 +1,28 @@
+:root {
+    /* Base Colors */
+    --runestone-grey: #5a5a5a;
+    --old-gold: #c2b280;
+    --rune-blue: #3c5dae;
+    --dark-iron: #2e2e2e;
+    --inventory-tan: #a88b68;
+    --blood-red: #7d0a0a;
+    --mystic-purple: #6e4ba3;
+
+    /* Lighter Shades */
+    --runestone-grey-light: #7a7a7a;
+    --old-gold-light: #d9ce9e;
+    --rune-blue-light: #5e7fd4;
+    --dark-iron-light: #4c4c4c;
+    --inventory-tan-light: #c6a988;
+    --blood-red-light: #a02e2e;
+    --mystic-purple-light: #8f6ec0;
+
+    /* Darker Shades */
+    --runestone-grey-dark: #3c3c3c;
+    --old-gold-dark: #998b62;
+    --rune-blue-dark: #2b4684;
+    --dark-iron-dark: #1a1a1a;
+    --inventory-tan-dark: #7a664b;
+    --blood-red-dark: #500707;
+    --mystic-purple-dark: #4a2e73;
+}
