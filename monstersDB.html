@@ -15,28 +15,28 @@
             integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
             crossorigin="anonymous"
         ></script>
-        <script type="module" src="/main.js"></script>
+
         <title>Oldschool Runescape Database - Monsters</title>
     </head>
     <body>
-        <template>
-            <div class="card shadow-sm border border-black mx-5 mb-3">
+        <template id="monsterCardTemplate">
+            <div class="card shadow-sm border-0 mx-5 mb-3">
                 <div class="card-header">
-                    <h3 class="card-title mb-0 valName">Aberrant Spectre</h3>
-                    <small class="valCombatLvl">Combat Level: 96</small>
-                    <small class="px-4 valExamine fst-italic">"A very smelly ghost."</small>
-                    <small class="px-4 valIds">ID: 2</small>
+                    <h3 class="card-title mb-0 valName"></h3>
+                    <small class="valCombatLvl"></small>
+                    <small class="px-4 valExamine fst-italic"></small>
+                    <small class="px-4 valIds"></small>
                 </div>
                 <div class="card-body">
                     <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">Monster Info</h5>
 
                     <div class="row text-center mb-1">
-                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Members: </span> <span class="valMemb">Yes</span></div>
-                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Size: </span><span class="valSize">2x2</span></div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Members: </span> <span class="valMemb"></span></div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Size: </span><span class="valSize"></span></div>
                         <div class="col-lg-3 col-sm-12 fw-semibold border-end">
-                            <span>Attribute: </span><span class="valAttribute">Undead, Spectral</span>
+                            <span>Attribute: </span><span class="valAttribute"></span>
                         </div>
-                        <div class="col-lg-3 col-sm-12 fw-semibold"><span>Max Hit: </span><span class="valMaxHit">20</span></div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold"><span>Max Hit: </span><span class="valMaxHit"></span></div>
                     </div>
 
                     <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
@@ -46,27 +46,27 @@
                     <div class="row text-center mb-1">
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Hitpoints_icon.png" alt="Hitpoints" class="stat-icon" />
-                            <div class="valHpLvl">90</div>
+                            <div class="valHpLvl"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Attack_icon.png" alt="Attack" class="stat-icon" />
-                            <div class="valAtkLvl">1</div>
+                            <div class="valAtkLvl"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Strength_icon.png" alt="Strength" class="stat-icon" />
-                            <div class="valStrLvl">1</div>
+                            <div class="valStrLvl"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Defence_icon.png" alt="Defence" class="stat-icon" />
-                            <div class="valDefLvl">90</div>
+                            <div class="valDefLvl"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Magic_icon.png" alt="Magic" class="stat-icon" />
-                            <div class="valRangeLvl">105</div>
+                            <div class="valMagicLvl"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block">
                             <img src="stat-icons/Ranged_icon.png" alt="Ranged" class="stat-icon" />
-                            <div class="valRangeLvl">1</div>
+                            <div class="valRangeLvl"></div>
                         </div>
                     </div>
 
@@ -77,27 +77,27 @@
                     <div class="row text-center mb-1">
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Attack_icon.png" alt="Attack Bonus" class="stat-icon" />
-                            <div class="valAtkBonus">0</div>
+                            <div class="valAtkBonus"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Strength_icon.png" alt="Strength Bonus" class="stat-icon" />
-                            <div class="valStrBonus">0</div>
+                            <div class="valStrBonus"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Magic_icon.png" alt="Magic Attack" class="stat-icon" />
-                            <div class="valMagicAtk">0</div>
+                            <div class="valMagicAtk"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Magic_Damage_icon.png" alt="Magic Bonus" class="stat-icon" />
-                            <div class="valMagicBonus">0</div>
+                            <div class="valMagicBonus"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Ranged_icon.png" alt="Ranged Attack" class="stat-icon" />
-                            <div class="valRangeAtk">0</div>
+                            <div class="valRangeAtk"></div>
                         </div>
                         <div class="col-4 col-md-2 stat-block">
                             <img src="stat-icons/Ranged_Strength_icon.png" alt="Ranged Bonus" class="stat-icon" />
-                            <div class="valRangeStr">0</div>
+                            <div class="valRangeStr"></div>
                         </div>
                     </div>
 
@@ -108,15 +108,15 @@
                     <div class="row text-center mb-1">
                         <div class="col-4 col-md-4 stat-block border-end">
                             <img src="stat-icons/White_dagger.png" alt="Stab Defence" class="stat-icon" />
-                            <div class="valStabDef">+0</div>
+                            <div class="valStabDef"></div>
                         </div>
                         <div class="col-4 col-md-4 stat-block border-end">
                             <img src="stat-icons/White_scimitar.png" alt="Slash Defence" class="stat-icon" />
-                            <div class="valSlashDef">+0</div>
+                            <div class="valSlashDef"></div>
                         </div>
                         <div class="col-4 col-md-4 stat-block">
                             <img src="stat-icons/White_warhammer.png" alt="Blunt Defence" class="stat-icon" />
-                            <div class="valBluntDef">+0</div>
+                            <div class="valBluntDef"></div>
                         </div>
                     </div>
                     <div class="row">
@@ -126,14 +126,16 @@
                                 Magic Defence
                             </h5>
                             <div class="row text-center mb-1">
-                                <div class="col-6 col-md-6 stat-block border-end">
+                                <div class="col-12 col-md-12 stat-block border-end">
                                     <img src="stat-icons/Magic_icon.png" alt="Magic Defence" class="stat-icon" />
-                                    <div class="valMagicDef">+0</div>
+                                    <div class="valMagicDef"></div>
                                 </div>
+                                <!-- Data set too old to show elemental weakness as is a new feature
                                 <div class="col-6 col-md-6 stat-block">
                                     <img src="stat-icons/Pure_essence.png" alt="Elemental Weaknesses" class="stat-icon" />
-                                    <div class="valEleWeak">No elemental weaknesses</div>
-                                </div>
+                                    <div class="valEleWeak"></div>
+                                </div> 
+                                -->
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
@@ -144,56 +146,55 @@
                             <div class="row text-center mb-1">
                                 <div class="col-12 stat-block">
                                     <img src="stat-icons/Ranged_icon.png" alt="Ranged Defence" class="stat-icon" />
-                                    <div class="valRangeDef">+0</div>
+                                    <div class="valRangeDef"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
-                        <img src="stat-icons/Combat_icon.png" alt="Combat Icon" width="24" height="24" />
-                        Slayer Info
-                    </h5>
-                    <div class="row text-center mb-3">
-                        <div class="col-lg-3 col-sm-12 fw-semibold border-end">
-                            <span>Slayer Level: </span> <span class="valSlayerLvl">60</span>
-                        </div>
-                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Slayer XP: </span><span class="valSize">90</span></div>
-                        <div class="col-lg-6 col-sm-12 fw-semibold">
-                            <span>Slayer Masters: </span><span class="valMaxHit">Vannaka, Chaeldar, Konar, Nieve, Duradel</span>
+                    <div class="slayer-section">
+                        <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
+                            <img src="stat-icons/Combat_icon.png" alt="Combat Icon" width="24" height="24" />
+                            Slayer Info
+                        </h5>
+                        <div class="row text-center mb-3">
+                            <div class="col-lg-3 col-sm-12 fw-semibold border-end">
+                                <span>Slayer Level: </span> <span class="valSlayerLvl"></span>
+                            </div>
+                            <div class="col-lg-3 col-sm-12 fw-semibold border-end">
+                                <span>Slayer XP: </span><span class="valSize"></span>
+                            </div>
+                            <div class="col-lg-6 col-sm-12 fw-semibold"><span>Slayer Masters: </span><span class="valMaxHit"></span></div>
                         </div>
                     </div>
 
-                    <div class="accordion" id="accordionExample">
+                    <div class="accordion" id="_ACCORDION_ID_">
                         <div class="accordion-item">
                             <h2 class="accordion-header d-flex align-items-center gap-2 rounded fw-bold">
                                 <button
                                     class="accordion-button rounded fw-bold text-white"
                                     type="button"
                                     data-bs-toggle="collapse"
-                                    data-bs-target="#collapseOne"
+                                    data-bs-target="#_COLLAPSE_ID_"
                                     aria-expanded="true"
-                                    aria-controls="collapseOne"
+                                    aria-controls="_COLLAPSE_ID_"
                                 >
                                     Drops
                                 </button>
                             </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                            <div id="_COLLAPSE_ID_" class="accordion-collapse collapse" data-bs-parent="#_ACCORDION_ID_">
                                 <div class="accordion-body"></div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="https://oldschool.runescape.wiki/w/Aberrant_spectre" target="_blank" class="btn btn-primary btn-sm">
-                        View on Wiki
-                    </a>
+                    <a href="https://oldschool.runescape.wiki/w/Aberrant_spectre" target="_blank" class="btn btn-sm"> View on Wiki </a>
                 </div>
             </div>
         </template>
         <nav class="navbar navbar-expand-lg bg-body-tertiary p-4">
             <div class="container-fluid">
-                <a class="navbar-brand h1" href="#">Oldschool Runescape Database</a>
+                <a class="navbar-brand h1" href="./">Oldschool Runescape Database</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -217,15 +218,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Items</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Databases
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Monsters</a></li>
-                                <li><a class="dropdown-item" href="#">Items</a></li>
-                                <li><a class="dropdown-item" href="#">Prayers</a></li>
-                            </ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Prayers</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -235,8 +229,13 @@
                 </div>
             </div>
         </nav>
-        <h1 class="h1 text-center">Monster Cards (First 100)</h1>
 
-        <div class="container" id="monster-container"></div>
+        <div class="main-container pt-4">
+            <h1 class="h1 text-center">Monster Cards (First 100)</h1>
+            <div class="container" id="monster-container"></div>
+            <button id="loadMoreBtn">Load More</button>
+        </div>
+
+        <script type="module" src="/main.js"></script>
     </body>
 </html>

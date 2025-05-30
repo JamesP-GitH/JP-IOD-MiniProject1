@@ -41,13 +41,35 @@
     --osrs-border-dark: #2a2a29;
     --osrs-panel-dark: #2d2b24;
 }
-
 body {
+    max-width: 100vw;
+    margin: 0px;
+    padding: 0;
     background-color: var(--osrs-background);
+}
+
+.main-container {
+    max-width: 100vw;
+    height: 100%;
+    margin: 0px;
+    background-color: var(--osrs-background);
+}
+
+.main-container > h1 {
+    color: white;
 }
 
 .card {
     border-color: var(--osrs-border);
+}
+.card .card-footer {
+    background-color: #4f3a1a;
+    border-color: var(--osrs-border);
+}
+.card .card-footer .btn {
+    background-color: var(--osrs-gold);
+    border: none;
+    color: black;
 }
 
 .card h5 {
