@@ -1,79 +1,84 @@
 :root {
     /* Base Colors */
-    --runestone-grey: #5a5a5a; /* Panels */
-    --old-gold: #c2b280; /* accents */
-    --rune-blue: #3c5dae; /* links */
-    --dark-iron: #2e2e2e; /* backgrounds */
-    --inventory-tan: #a88b68; /* bg for containers */
-    --blood-red: #7d0a0a; /* alerts, hp bars, some buttons */
-    --mystic-purple: #6e4ba3; /* spell ui, mystical elements, special accents */
-    --coal-grey: #444444; /* Mining rocks, cave walls */
-    --bronze-brown: #8c6239; /* Bronze gear, crafting */
-    --iron-grey: #6d6d6d; /* Iron items, stone */
-    --steel-blue-grey: #8391a1; /* Steel armor, UI borders */
-    --rune-silver: #adb3bc; /* Rune items, spellbook UI */
-    --dragon-red: #a60000; /* Dragon weapons */
-    --obsidian-black: #1c1c1c; /* Dark dungeons, overlays */
-    --herblore-green: #5b7c39; /* Herbs, potions */
-    --fletching-oak: #a68064; /* Logs, bows */
-    --fishing-blue: #4a89c5; /* Water tiles */
-    --farming-grass: #3e7d36; /* Grass, farming patches */
-    --firemaking-orange: #c15621; /* Flames, fire skill */
-    --saradomin-blue: #1e3d8f; /* Saradomin gear */
-    --zamorak-crimson: #870000; /* Zamorak items */
-    --guthix-green: #367a42; /* Guthix themes */
-    --quest-scroll-yellow: #e5d38d; /* Scrolls, parchment UI */
-    --ancient-ice-blue: #9ccdeb; /* Ancient magicks */
+    --osrs-yellow: #ffcf3f;
+    --osrs-gold: #e6a519;
+    --osrs-brown: #694d23;
+    --osrs-dark-brown: #382d1a;
+    --osrs-black: #0f0f0f;
+    --osrs-green: #00ff00;
+    --osrs-red: #ff0000;
+    --osrs-blue: #0088ff;
+    --osrs-chat: #00ffff;
+    --osrs-background: #2e2c29;
+    --osrs-border: #474745;
+    --osrs-panel: #46433a;
 
     /* Lighter Shades */
-    --runestone-grey-light: #7a7a7a;
-    --old-gold-light: #d9ce9e;
-    --rune-blue-light: #5e7fd4;
-    --dark-iron-light: #4c4c4c;
-    --inventory-tan-light: #c6a988;
-    --blood-red-light: #a02e2e;
-    --mystic-purple-light: #8f6ec0;
-    --coal-grey-light: #5c5c5c;
-    --bronze-brown-light: #a97c55;
-    --iron-grey-light: #898989;
-    --steel-blue-grey-light: #a1aeba;
-    --rune-silver-light: #c8ccd4;
-    --dragon-red-light: #c43030;
-    --obsidian-black-light: #333333;
-    --herblore-green-light: #789d54;
-    --fletching-oak-light: #c19e83;
-    --fishing-blue-light: #6fa6dc;
-    --farming-grass-light: #5c9c52;
-    --firemaking-orange-light: #d97b4a;
-    --saradomin-blue-light: #4964b3;
-    --zamorak-crimson-light: #a32e2e;
-    --guthix-green-light: #5c9c66;
-    --quest-scroll-yellow-light: #f2e7af;
-    --ancient-ice-blue-light: #b6e1f5;
+    --osrs-yellow-light: #ffe680;
+    --osrs-gold-light: #ffd266;
+    --osrs-brown-light: #8c6f40;
+    --osrs-dark-brown-light: #5c4c33;
+    --osrs-black-light: #2a2a2a;
+    --osrs-green-light: #66ff66;
+    --osrs-red-light: #ff6666;
+    --osrs-blue-light: #66bfff;
+    --osrs-chat-light: #66ffff;
+    --osrs-background-light: #4a4845;
+    --osrs-border-light: #6c6c6a;
+    --osrs-panel-light: #6b6758;
 
     /* Darker Shades */
-    --runestone-grey-dark: #3c3c3c;
-    --old-gold-dark: #998b62;
-    --rune-blue-dark: #2b4684;
-    --dark-iron-dark: #1a1a1a;
-    --inventory-tan-dark: #7a664b;
-    --blood-red-dark: #500707;
-    --mystic-purple-dark: #4a2e73;
-    --coal-grey-dark: #2e2e2e;
-    --bronze-brown-dark: #664527;
-    --iron-grey-dark: #4e4e4e;
-    --steel-blue-grey-dark: #617080;
-    --rune-silver-dark: #8c929b;
-    --dragon-red-dark: #730000;
-    --obsidian-black-dark: #0f0f0f;
-    --herblore-green-dark: #3f5c27;
-    --fletching-oak-dark: #826044;
-    --fishing-blue-dark: #2f5e8a;
-    --farming-grass-dark: #2b5525;
-    --firemaking-orange-dark: #8e3f17;
-    --saradomin-blue-dark: #152b68;
-    --zamorak-crimson-dark: #5c0000;
-    --guthix-green-dark: #24582e;
-    --quest-scroll-yellow-dark: #c9b764;
-    --ancient-ice-blue-dark: #6faac7;
+    --osrs-yellow-dark: #cc9f1a;
+    --osrs-gold-dark: #b37800;
+    --osrs-brown-dark: #4d3817;
+    --osrs-dark-brown-dark: #1f1a11;
+    --osrs-black-dark: #000000;
+    --osrs-green-dark: #00b300;
+    --osrs-red-dark: #b30000;
+    --osrs-blue-dark: #005fcc;
+    --osrs-chat-dark: #00b3b3;
+    --osrs-background-dark: #1a1917;
+    --osrs-border-dark: #2a2a29;
+    --osrs-panel-dark: #2d2b24;
+}
+
+body {
+    background-color: var(--osrs-background);
+}
+
+.card {
+    border-color: var(--osrs-border);
+}
+
+.card h5 {
+    background-color: var(--osrs-dark-brown);
+    color: white;
+    padding: 4px;
+}
+.card .accordion .accordion-button,
+.card .accordion .accordion-item {
+    background-color: var(--osrs-dark-brown);
+    border: none;
+    box-shadow: none;
+}
+.card .accordion .accordion-button {
+    background-color: var(--osrs-dark-brown);
+    color: white;
+}
+
+.card .accordion .accordion-button::after {
+    filter: brightness(0) invert(1);
+}
+
+.card .accordion .accordion-body {
+    background-color: var(--osrs-background-light);
+}
+
+.card .card-body {
+    background-color: var(--osrs-panel);
+    color: white;
+}
+.card .card-header {
+    background-color: var(--osrs-brown);
+    color: white;
 }
