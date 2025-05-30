@@ -38,6 +38,7 @@ export default class MonsterParser {
             // === output data structure ===
             const stats = {
                 hitpoints: monster.hitpoints,
+                max_hit: monster.max_hit,
                 attack_bonus: monster.attack_bonus,
                 attack_level: monster.attack_level,
                 attack_magic: monster.attack_magic,
