@@ -67,6 +67,7 @@ export default class MonsterParser {
             };
 
             const commonInfo = {
+                drops: monster.drops || [],
                 immune_poison: monster.immune_poison,
                 immune_venom: monster.immune_venom,
                 poisonous: monster.poisonous,
