@@ -5,14 +5,16 @@ fetch("./items-complete.json")
     .then((response) => response.json())
     .then((json) => {
         const parser = new ItemParser(json);
+        const filtered = parser.groupByWikiName();
+        const filteredParser = new ItemParser(filtered);
 
-        const equipableItems = parser.getEquipableItems();
-        const weapons = parser.getEquipableWeapons();
-        const helmets = parser.getItemsBySlot("head");
-        const excalibur = parser.searchItemsByName("Excalibur");
-        const allItems = parser.getAllItems();
+        const equipableItems = filteredParser.getEquipableItems();
+        const weapons = filteredParser.getEquipableWeapons();
+        const helmets = filteredParser.getItemsBySlot("head");
+        const excalibur = filteredParser.searchItemsByName("Excalibur");
+        //const allItems = parser.getAllItems();
 
-        console.log("All Items:", allItems);
+        // console.log("All Items:", allItems);
         console.log("Equipable Items:", equipableItems);
         console.log("Weapons:", weapons);
         console.log("Helmets:", helmets);
