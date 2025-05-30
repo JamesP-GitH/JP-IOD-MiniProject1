@@ -1,5 +1,8 @@
 import MonsterParser from "./MonsterParser.js";
 import ItemParser from "/ItemParser.js";
+import MonsterCardRenderer from "./MonsterCardRenderer.js";
+
+let monsterList = [];
 
 async function loadItems() {
     try {
@@ -31,40 +34,32 @@ async function loadMonsters() {
     try {
         const response = await fetch("/monsters-complete.json");
         const json = await response.json();
-
+        console.log(json);
         const parser = new MonsterParser(json);
-        const monsterList = parser.narrowMonsterList();
+        monsterList = parser.narrowMonsterList();
+        console.log(monsterList);
+        if (window.location.pathname !== "/" && window.location.pathname !== "/index.html") {
+            const manager = new MonsterCardRenderer({
+                cardTemplate: "#monsterCardTemplate",
+                cardContainer: "#monster-container",
+                data: monsterList,
+                limit: 20,
+            });
 
-        renderMonsterCards(monsterList.slice(0, 100)); // Limit to first 100
+            manager.loadMore(); // Initial load
+
+            // Optional: Load more button
+            document.getElementById("loadMoreBtn").addEventListener("click", () => {
+                manager.loadMore();
+                if (!manager.hasMore()) {
+                    document.getElementById("loadMoreBtn").style.display = "none";
+                }
+            });
+        }
+        //renderMonsterCards(monsterList.slice(0, 100)); // Limit to first 100
     } catch (error) {
         console.error("Error fetching or parsing monsters JSON:", error);
     }
-}
-
-function renderMonsterCards(monsters) {
-    const container = document.getElementById("monster-container");
-    if (!container) return;
-
-    monsters.forEach((monster) => {
-        const m = monster.monsterData;
-
-        const card = document.createElement("div");
-        card.className = "card";
-
-        card.innerHTML = `
-      <h2>${m.monsterName}</h2>
-      <p><strong>Combat Level:</strong> ${m.combat_level}</p>
-      <p><strong>Hitpoints:</strong> ${m.stats.hitpoints}</p>
-      <p><strong>Attack Level:</strong> ${m.stats.attack_level}</p>
-      <p><strong>Defence Level:</strong> ${m.stats.defence_level}</p>
-      <p><strong>Magic Level:</strong> ${m.stats.magic_level}</p>
-      <p><strong>Attributes:</strong> ${m.stats.attributes.join(", ")}</p>
-      <p><strong>Slayer Level:</strong> ${m.slayerInfo?.slayer_level ?? "N/A"}</p>
-      <p><a href="${m.metaInfo.wiki_url}" target="_blank">View on Wiki</a></p>
-    `;
-
-        container.appendChild(card);
-    });
 }
 
 loadItems();
