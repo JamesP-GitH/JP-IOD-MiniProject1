@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./styles.css" />
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -19,34 +20,47 @@
     </head>
     <body>
         <template>
-            <div class="card shadow-sm px-5">
-                <div class="card-header bg-primary text-white">
+            <div class="card shadow-sm border border-black mx-5 mb-3">
+                <div class="card-header">
                     <h3 class="card-title mb-0 valName">Aberrant Spectre</h3>
                     <small class="valCombatLvl">Combat Level: 96</small>
+                    <small class="px-4 valExamine fst-italic">"A very smelly ghost."</small>
+                    <small class="px-4 valIds">ID: 2</small>
                 </div>
                 <div class="card-body">
-                    <h5 class="d-flex align-items-center gap-2">
+                    <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">Monster Info</h5>
+
+                    <div class="row text-center mb-1">
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Members: </span> <span class="valMemb">Yes</span></div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Size: </span><span class="valSize">2x2</span></div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end">
+                            <span>Attribute: </span><span class="valAttribute">Undead, Spectral</span>
+                        </div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold"><span>Max Hit: </span><span class="valMaxHit">20</span></div>
+                    </div>
+
+                    <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
                         <img src="stat-icons/Combat_icon.png" alt="Combat Icon" width="24" height="24" />
                         Combat Stats
                     </h5>
-                    <div class="row text-center mb-3">
-                        <div class="col-4 col-md-2 stat-block">
+                    <div class="row text-center mb-1">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Hitpoints_icon.png" alt="Hitpoints" class="stat-icon" />
                             <div class="valHpLvl">90</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Attack_icon.png" alt="Attack" class="stat-icon" />
                             <div class="valAtkLvl">1</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Strength_icon.png" alt="Strength" class="stat-icon" />
                             <div class="valStrLvl">1</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Defence_icon.png" alt="Defence" class="stat-icon" />
                             <div class="valDefLvl">90</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Magic_icon.png" alt="Magic" class="stat-icon" />
                             <div class="valRangeLvl">105</div>
                         </div>
@@ -56,28 +70,28 @@
                         </div>
                     </div>
 
-                    <h5 class="d-flex align-items-center gap-2">
+                    <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
                         <img src="stat-icons/Attack_icon.png" alt="Attack Icon" width="24" height="24" />
                         Aggressive stats
                     </h5>
-                    <div class="row text-center mb-3">
-                        <div class="col-4 col-md-2 stat-block">
+                    <div class="row text-center mb-1">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Attack_icon.png" alt="Attack Bonus" class="stat-icon" />
                             <div class="valAtkBonus">0</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Strength_icon.png" alt="Strength Bonus" class="stat-icon" />
                             <div class="valStrBonus">0</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Magic_icon.png" alt="Magic Attack" class="stat-icon" />
                             <div class="valMagicAtk">0</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Magic_Damage_icon.png" alt="Magic Bonus" class="stat-icon" />
                             <div class="valMagicBonus">0</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-2 stat-block border-end">
                             <img src="stat-icons/Ranged_icon.png" alt="Ranged Attack" class="stat-icon" />
                             <div class="valRangeAtk">0</div>
                         </div>
@@ -87,85 +101,93 @@
                         </div>
                     </div>
 
-                    <h5 class="d-flex align-items-center gap-2">
+                    <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
                         <img src="stat-icons/Defence_icon.png" alt="Defence Icon" width="24" height="24" />
                         Melee Defence
                     </h5>
-                    <div class="row text-center mb-3">
-                        <div class="col-4 col-md-2 stat-block">
+                    <div class="row text-center mb-1">
+                        <div class="col-4 col-md-4 stat-block border-end">
                             <img src="stat-icons/White_dagger.png" alt="Stab Defence" class="stat-icon" />
                             <div class="valStabDef">+0</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-4 stat-block border-end">
                             <img src="stat-icons/White_scimitar.png" alt="Slash Defence" class="stat-icon" />
                             <div class="valSlashDef">+0</div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
+                        <div class="col-4 col-md-4 stat-block">
                             <img src="stat-icons/White_warhammer.png" alt="Blunt Defence" class="stat-icon" />
                             <div class="valBluntDef">+0</div>
                         </div>
                     </div>
-
-                    <h5 class="d-flex align-items-center gap-2">
-                        <img src="stat-icons/Magic_defence_icon.png" alt="Magic Defence Icon" width="24" height="24" />
-                        Magic Defence
-                    </h5>
-                    <div class="row text-center mb-3">
-                        <div class="col-4 col-md-2 stat-block">
-                            <img src="stat-icons/Magic_icon.png" alt="Magic Defence" class="stat-icon" />
-                            <div class="valMagicDef">+0</div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
+                                <img src="stat-icons/Magic_defence_icon.png" alt="Magic Defence Icon" width="24" height="24" />
+                                Magic Defence
+                            </h5>
+                            <div class="row text-center mb-1">
+                                <div class="col-6 col-md-6 stat-block border-end">
+                                    <img src="stat-icons/Magic_icon.png" alt="Magic Defence" class="stat-icon" />
+                                    <div class="valMagicDef">+0</div>
+                                </div>
+                                <div class="col-6 col-md-6 stat-block">
+                                    <img src="stat-icons/Pure_essence.png" alt="Elemental Weaknesses" class="stat-icon" />
+                                    <div class="valEleWeak">No elemental weaknesses</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-4 col-md-2 stat-block">
-                            <img src="stat-icons/Pure_essence.png" alt="Elemental Weaknesses" class="stat-icon" />
-                            <div class="valEleWeak">No elemental weaknesses</div>
+                        <div class="col-sm-12 col-md-6">
+                            <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
+                                <img src="stat-icons/Ranged_defence_icon.png" alt="Ranged Defence Icon" width="24" height="24" />
+                                Ranged Defence
+                            </h5>
+                            <div class="row text-center mb-1">
+                                <div class="col-12 stat-block">
+                                    <img src="stat-icons/Ranged_icon.png" alt="Ranged Defence" class="stat-icon" />
+                                    <div class="valRangeDef">+0</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <h5 class="d-flex align-items-center gap-2">
-                        <img src="stat-icons/Ranged_defence_icon.png" alt="Ranged Defence Icon" width="24" height="24" />
-                        Ranged Defence
-                    </h5>
-                    <div class="row text-center mb-3">
-                        <div class="col-4 col-md-2 stat-block">
-                            <img src="stat-icons/Ranged_icon.png" alt="Ranged Defence" class="stat-icon" />
-                            <div class="valRangeDef">+0</div>
-                        </div>
-                    </div>
-                    <h5 class="d-flex align-items-center gap-2">
-                        <img src="stat-icons/Combat_icon.png" alt="Combat Icon" width="24" height="24" />
-                        Combat Stats
-                    </h5>
 
-                    <ul class="list-group mb-3">
-                        <li class="list-group-item"><strong>Defence Ranged:</strong> 15</li>
-                    </ul>
-
-                    <h5 class="d-flex align-items-center gap-2">
+                    <h5 class="d-flex align-items-center gap-2 rounded px-2 fw-bold">
                         <img src="stat-icons/Combat_icon.png" alt="Combat Icon" width="24" height="24" />
                         Slayer Info
                     </h5>
-                    <p><strong>Slayer Level:</strong> 60</p>
-                    <p><strong>XP per Kill:</strong> 90</p>
-                    <p><strong>Slayer Masters:</strong> Vannaka, Chaeldar, Konar, Nieve, Duradel</p>
+                    <div class="row text-center mb-3">
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end">
+                            <span>Slayer Level: </span> <span class="valSlayerLvl">60</span>
+                        </div>
+                        <div class="col-lg-3 col-sm-12 fw-semibold border-end"><span>Slayer XP: </span><span class="valSize">90</span></div>
+                        <div class="col-lg-6 col-sm-12 fw-semibold">
+                            <span>Slayer Masters: </span><span class="valMaxHit">Vannaka, Chaeldar, Konar, Nieve, Duradel</span>
+                        </div>
+                    </div>
 
-                    <h5>Attributes</h5>
-                    <p>Spectral, Undead</p>
-
-                    <h5>Examine</h5>
-                    <p><em>"A very smelly ghost."</em></p>
-
-                    <h5>Top Drops (Sample)</h5>
-                    <ul>
-                        <li>Uncut sapphire</li>
-                        <li>Uncut emerald</li>
-                        <li>Uncut ruby</li>
-                        <li>Chaos talisman</li>
-                        <li>Nature talisman</li>
-                    </ul>
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header d-flex align-items-center gap-2 rounded fw-bold">
+                                <button
+                                    class="accordion-button rounded fw-bold text-white"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne"
+                                >
+                                    Drops
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer text-end">
-                    <a href="https://oldschool.runescape.wiki/w/Aberrant_spectre" target="_blank" class="btn btn-primary btn-sm"
-                        >View on Wiki</a
-                    >
+                    <a href="https://oldschool.runescape.wiki/w/Aberrant_spectre" target="_blank" class="btn btn-primary btn-sm">
+                        View on Wiki
+                    </a>
                 </div>
             </div>
         </template>
