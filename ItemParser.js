@@ -3,6 +3,10 @@ export default class ItemParser {
         this.data = data;
     }
 
+    getAllItems() {
+        return Object.values(this.data);
+    }
+
     getEquipableItems() {
         return Object.values(this.data).filter((item) => item.equipable_by_player);
     }

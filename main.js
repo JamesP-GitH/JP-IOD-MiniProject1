@@ -10,7 +10,9 @@ fetch("./items-complete.json")
         const weapons = parser.getEquipableWeapons();
         const helmets = parser.getItemsBySlot("head");
         const excalibur = parser.searchItemsByName("Excalibur");
+        const allItems = parser.getAllItems();
 
+        console.log("All Items:", allItems);
         console.log("Equipable Items:", equipableItems);
         console.log("Weapons:", weapons);
         console.log("Helmets:", helmets);
