@@ -1,7 +1,7 @@
 import MonsterParser from "./MonsterParser.js";
 import ItemParser from "/ItemParser.js";
 
-fetch("https://raw.githubusercontent.com/0xNeffarion/osrsreboxed-db/master/docs/items-complete.json")
+fetch("./items-complete.json")
     .then((response) => response.json())
     .then((json) => {
         const parser = new ItemParser(json);
@@ -18,7 +18,7 @@ fetch("https://raw.githubusercontent.com/0xNeffarion/osrsreboxed-db/master/docs/
     })
     .catch((error) => console.error("Error fetching or parsing JSON:", error));
 
-fetch("https://raw.githubusercontent.com/0xNeffarion/osrsreboxed-db/master/docs/monsters-complete.json")
+fetch("/monsters-complete.json")
     .then((response) => response.json())
     .then((json) => {
         console.log(json);
