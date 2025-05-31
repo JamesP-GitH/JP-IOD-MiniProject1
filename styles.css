@@ -93,7 +93,30 @@ body {
 }
 
 .card .accordion .accordion-body {
+    background-color: var(--osrs-background);
+    color: white;
+}
+.card .accordion .accordion-body table.custom-striped-table {
+    border: none;
+}
+.card .accordion .accordion-body table.custom-striped-table thead tr th {
+    background-color: var(--osrs-background);
+    color: white;
+}
+.card .accordion .accordion-body table.custom-striped-table tbody tr:nth-child(odd) td {
     background-color: var(--osrs-background-light);
+    color: white;
+}
+.card .accordion .accordion-body table.custom-striped-table tbody tr:nth-child(even) td {
+    background-color: var(--osrs-background);
+    color: white;
+}
+.card .accordion .accordion-body table.custom-striped-table tbody tr td a {
+    color: white;
+    text-decoration: none;
+}
+.card .accordion .accordion-body table.custom-striped-table tbody tr td a:hover {
+    color: var(--osrs-blue);
 }
 
 .card .card-body {

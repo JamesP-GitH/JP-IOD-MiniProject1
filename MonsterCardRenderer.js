@@ -18,11 +18,12 @@ export default class MonsterCardRenderer {
         template.querySelector(".valCombatLvl").textContent = `Combat Level: ${monster.combat_level}`;
         template.querySelector(".valExamine").textContent = `"${monster.examine?.[0] || ""}"`;
         template.querySelector(".valIds").textContent = `ID: ${monster.ids?.[0] ?? ""}`;
+        template.querySelector(".valAtkType").textContent = `Attack Types: ${monster.stats.attack_type.map(this.capitalize).join(", ")}`;
 
         // Monster Info
         template.querySelector(".valMemb").textContent = monster.metaInfo.members ? "Yes" : "No";
         template.querySelector(".valSize").textContent = `${monster.commonInfo.size}x${monster.commonInfo.size}`;
-        template.querySelector(".valAttribute").textContent = monster.stats.attributes.join(", ");
+        template.querySelector(".valAttribute").textContent = monster.stats.attributes.join(", ") || "None";
         template.querySelector(".valMaxHit").textContent = monster.stats.max_hit;
 
         // Combat Stats
@@ -56,9 +57,13 @@ export default class MonsterCardRenderer {
         template.querySelector(".valRangeDef").textContent = `+${monster.stats.defence_ranged}`;
 
         // Slayer Info
-        template.querySelector(".valSlayerLvl").textContent = monster.slayerInfo.slayer_level;
-        template.querySelectorAll(".valSize")[1].textContent = monster.slayerInfo.slayer_xp;
-        template.querySelectorAll(".valMaxHit")[1].textContent = monster.slayerInfo.slayer_masters.map(this.capitalize).join(", ");
+        if (monster.slayerInfo.slayer_monster) {
+            template.querySelector(".valSlayerLvl").textContent = monster.slayerInfo.slayer_level;
+            template.querySelector(".valSlayerXp").textContent = monster.slayerInfo.slayer_xp;
+            template.querySelector(".valSlayerMasters").textContent = monster.slayerInfo.slayer_masters.map(this.capitalize).join(", ");
+        } else {
+            template.querySelector(".slayer-section").innerHTML = "";
+        }
 
         // Wiki link
         const wikiLink = template.querySelector(".card-footer a");
@@ -113,7 +118,7 @@ export default class MonsterCardRenderer {
                 .join("");
 
             dropsContainer.innerHTML = `
-        <table class="table table-bordered table-striped table-hover align-middle">
+        <table class="table custom-striped-table  table-hover align-middle">
             <thead>
                 <tr>
                     <th class="w-50">Name</th>
