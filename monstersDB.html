@@ -194,7 +194,7 @@
                 </div>
             </div>
         </template>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary p-4">
+        <nav class="navbar navbar-expand-lg p-4">
             <div class="container-fluid">
                 <a class="navbar-brand h1" href="./">Oldschool Runescape Database</a>
                 <button
@@ -234,6 +234,31 @@
 
         <div class="main-container pt-4">
             <h1 class="h1 text-center">Monster Database</h1>
+
+            <div class="container p-4">
+                <div class="row mb-4">
+                    <div class="col-md-3">
+                        <label for="categorySelect" class="form-label h5">Filter by Category</label>
+                        <select class="form-select" id="categorySelect">
+                            <option value="all">All Categories</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="sortSelect" class="form-label h5">Sort By</label>
+                        <select class="form-select" id="sortSelect">
+                            <option value="default">Default</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="searchInput" class="form-label h5">Search Monsters</label>
+                        <input type="text" class="form-control" id="searchInput" placeholder="Search by Name..." />
+                    </div>
+                    <div class="col-md-3">
+                        <label for="searchInput2" class="form-label h5">Search Monsters</label>
+                        <input type="number" name="" id="" />
+                    </div>
+                </div>
+            </div>
             <div class="container" id="monster-container"></div>
             <button id="loadMoreBtn">Load More</button>
         </div>
