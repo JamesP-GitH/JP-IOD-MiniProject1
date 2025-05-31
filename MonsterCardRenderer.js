@@ -90,7 +90,8 @@ export default class MonsterCardRenderer {
         // Drops
         const dropsContainer = template.querySelector(".accordion-body");
         if (dropsContainer && monster.commonInfo.drops) {
-            const tableRows = monster.commonInfo.drops
+            const sortedDrops = [...monster.commonInfo.drops].sort((a, b) => b.rarity - a.rarity);
+            const tableRows = sortedDrops
                 .map((drop) => {
                     let rarityDisplay = "—";
 
