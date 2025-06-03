@@ -35,26 +35,26 @@ export default class MonsterCardRenderer {
         template.querySelector(".valRangeLvl").textContent = monster.stats.ranged_level;
 
         // Aggressive Stats
-        template.querySelector(".valAtkBonus").textContent = `+${monster.stats.attack_bonus}`;
-        template.querySelector(".valStrBonus").textContent = `+${monster.stats.strength_bonus}`;
-        template.querySelector(".valMagicAtk").textContent = `+${monster.stats.attack_magic}`;
-        template.querySelector(".valMagicBonus").textContent = `+${monster.stats.magic_bonus}`;
-        template.querySelector(".valRangeAtk").textContent = `+${monster.stats.attack_ranged}`;
-        template.querySelector(".valRangeStr").textContent = `+${monster.stats.ranged_bonus}`;
+        template.querySelector(".valAtkBonus").textContent = this.formatBonus(monster.stats.attack_bonus);
+        template.querySelector(".valStrBonus").textContent = this.formatBonus(monster.stats.strength_bonus);
+        template.querySelector(".valMagicAtk").textContent = this.formatBonus(monster.stats.attack_magic);
+        template.querySelector(".valMagicBonus").textContent = this.formatBonus(monster.stats.magic_bonus);
+        template.querySelector(".valRangeAtk").textContent = this.formatBonus(monster.stats.attack_ranged);
+        template.querySelector(".valRangeStr").textContent = this.formatBonus(monster.stats.ranged_bonus);
 
         // Melee Defence
-        template.querySelector(".valStabDef").textContent = `+${monster.stats.defence_stab}`;
-        template.querySelector(".valSlashDef").textContent = `+${monster.stats.defence_slash}`;
-        template.querySelector(".valBluntDef").textContent = `+${monster.stats.defence_crush}`;
+        template.querySelector(".valStabDef").textContent = this.formatBonus(monster.stats.defence_stab);
+        template.querySelector(".valSlashDef").textContent = this.formatBonus(monster.stats.defence_slash);
+        template.querySelector(".valBluntDef").textContent = this.formatBonus(monster.stats.defence_crush);
 
         // Magic & Elemental Defence
-        template.querySelector(".valMagicDef").textContent = `+${monster.stats.defence_magic}`;
+        template.querySelector(".valMagicDef").textContent = this.formatBonus(monster.stats.defence_magic);
         /*  data set is not new enough to show elemental weakness as is new feature
         template.querySelector(".valEleWeak").textContent = "No elemental weaknesses"; 
         */
 
         // Ranged Defence
-        template.querySelector(".valRangeDef").textContent = `+${monster.stats.defence_ranged}`;
+        template.querySelector(".valRangeDef").textContent = this.formatBonus(monster.stats.defence_ranged);
 
         // Slayer Info
         if (monster.slayerInfo.slayer_monster) {
@@ -144,6 +144,10 @@ export default class MonsterCardRenderer {
             this.container.appendChild(clone);
         });
         this.currentIndex += this.limit;
+    }
+
+    formatBonus(value) {
+        return value !== undefined && value !== null ? (value >= 0 ? `+${value}` : `${value}`) : "—";
     }
 
     capitalize(str) {
