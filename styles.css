@@ -3,6 +3,7 @@
     --osrs-yellow: #ffcf3f;
     --osrs-gold: #e6a519;
     --osrs-brown: #694d23;
+    --osrs-footer-brown: #4f3a1a;
     --osrs-dark-brown: #382d1a;
     --osrs-black: #0f0f0f;
     --osrs-green: #00ff00;
@@ -12,40 +13,128 @@
     --osrs-background: #2e2c29;
     --osrs-border: #474745;
     --osrs-panel: #46433a;
-
-    /* Lighter Shades */
-    --osrs-yellow-light: #ffe680;
-    --osrs-gold-light: #ffd266;
-    --osrs-brown-light: #8c6f40;
-    --osrs-dark-brown-light: #5c4c33;
-    --osrs-black-light: #2a2a2a;
-    --osrs-green-light: #66ff66;
-    --osrs-red-light: #ff6666;
-    --osrs-blue-light: #66bfff;
-    --osrs-chat-light: #66ffff;
     --osrs-background-light: #4a4845;
-    --osrs-border-light: #6c6c6a;
-    --osrs-panel-light: #6b6758;
-
-    /* Darker Shades */
-    --osrs-yellow-dark: #cc9f1a;
-    --osrs-gold-dark: #b37800;
-    --osrs-brown-dark: #4d3817;
-    --osrs-dark-brown-dark: #1f1a11;
-    --osrs-black-dark: #000000;
-    --osrs-green-dark: #00b300;
-    --osrs-red-dark: #b30000;
-    --osrs-blue-dark: #005fcc;
-    --osrs-chat-dark: #00b3b3;
-    --osrs-background-dark: #1a1917;
-    --osrs-border-dark: #2a2a29;
-    --osrs-panel-dark: #2d2b24;
+    --osrs-text: #ffffff;
+}
+.mystic-mode {
+    /* Mystic/Night Theme Colors */
+    --osrs-yellow: #b89eff; /* Light purple glow */
+    --osrs-gold: #9e71ff; /* Deep lavender/gold blend */
+    --osrs-brown: #2c1b3f; /* Muted eggplant/dark plum */
+    --osrs-footer-brown: #3a2b4f;
+    --osrs-dark-brown: #1c1129; /* Very dark indigo */
+    --osrs-black: #0a0a0a; /* Almost pure black */
+    --osrs-green: #60ffab; /* Soft magical green */
+    --osrs-red: #ff6a6a; /* Gentle crimson */
+    --osrs-blue: #5691ff; /* Mystic blue */
+    --osrs-chat: #6fffff; /* Aqua/teal chat glow */
+    --osrs-background: #1b1823; /* Soft black-purple */
+    --osrs-border: #2d2935; /* Slight contrast for UI panels */
+    --osrs-panel: #2a2333; /* Background for cards, forms */
+    --osrs-background-light: #3a3344;
+    --osrs-text: #ffffff; /* Keep text white for contrast */
+}
+.desert-mode {
+    /* Desert/Treasure Colors */
+    --osrs-yellow: #f2d16b; /* Sun-bleached gold */
+    --osrs-gold: #d4a743; /* Warm treasure gold */
+    --osrs-brown: #8b5e3c; /* Sandstone */
+    --osrs-dark-brown: #4b3621; /* Worn leather / ancient wood */
+    --osrs-black: #1a1a1a; /* Dark shadowed corners */
+    --osrs-green: #7fa844; /* Oasis foliage / dry sage */
+    --osrs-red: #c2513e; /* Worn red cloth / desert heat */
+    --osrs-blue: #3a7ca5; /* Cerulean desert sky */
+    --osrs-chat: #b5d9dd; /* Light dusty cyan / sky reflection */
+    --osrs-background: #2d241c; /* Desert night / ancient tomb */
+    --osrs-border: #6c513f; /* Mudbrick / aged stone */
+    --osrs-panel: #3b2f26; /* Clay-tinted sandstone */
+    --osrs-background-light: #4a3a2d; /* Slightly brighter adobe tone */
+    --osrs-text: #f8f1e3; /* Pale parchment */
+    --osrs-footer-brown: #5c3f28; /* Darker weathered stone */
+}
+.gothic-mode {
+    /* Gothic/Dark Magic Colors */
+    --osrs-yellow: #e0c97f; /* Candlelight gold */
+    --osrs-gold: #bfa65c; /* Aged gilding */
+    --osrs-brown: #553f30; /* Damp wood / manor walls */
+    --osrs-dark-brown: #2a1f1b; /* Decaying timber */
+    --osrs-black: #121212; /* Deep crypt black */
+    --osrs-green: #79a57d; /* Sickly ivy green */
+    --osrs-red: #9c4141; /* Dried blood / cursed sigil red */
+    --osrs-blue: #3d5b84; /* Foggy twilight blue */
+    --osrs-chat: #96c9c1; /* Pale ghostly cyan */
+    --osrs-background: #1c1a18; /* Manor interior black */
+    --osrs-border: #3d332c; /* Old stone trim */
+    --osrs-panel: #2e2622; /* Dusty crypt paneling */
+    --osrs-background-light: #3a3029; /* Subtle variation for stripes */
+    --osrs-text: #e9e3dc; /* Bone-white */
+    --osrs-footer-brown: #3f2f26; /* Damp floorboard tone */
+}
+.vampyre-mode {
+    /* Vampyre/Morytania Theme */
+    --osrs-yellow: #e6c86b; /* Pale candlelight gold */
+    --osrs-gold: #b48836; /* Aged regal gold */
+    --osrs-brown: #4a1f1f; /* Dried blood / vampyric trim */
+    --osrs-dark-brown: #1b0f13; /* Crypt-shadow black-red */
+    --osrs-black: #09070a; /* Deep vampyric black */
+    --osrs-green: #6bba7c; /* Alchemical green / undead fog */
+    --osrs-red: #b3132b; /* Vibrant blood red */
+    --osrs-blue: #3e69a7; /* Cold moonlit blue */
+    --osrs-chat: #9ed9dd; /* Eerie ghost-chat cyan */
+    --osrs-background: #140f14; /* Shadowy stone / blood-soaked ground */
+    --osrs-border: #372733; /* Polished black marble */
+    --osrs-panel: #22161f; /* Crimson-tinted black stone */
+    --osrs-background-light: #311e2a; /* Slightly lighter panel contrast */
+    --osrs-text: #f0e8e2; /* Pale gothic parchment */
+    --osrs-footer-brown: #35141f; /* Ornate vampyric trim */
+}
+.arcane-mode {
+    /* Arcane Mystic Theme */
+    --osrs-yellow: #c9d6ff; /* Moonlit silver */
+    --osrs-gold: #a3b5e9; /* Soft arcane shimmer */
+    --osrs-brown: #343556; /* Duskstone */
+    --osrs-dark-brown: #1b1b2c; /* Starry sky shadow */
+    --osrs-black: #0e0e1a; /* Deep night black */
+    --osrs-green: #7ad1b0; /* Healing energy / lunar mist */
+    --osrs-red: #de6a6a; /* Soft spell surge red */
+    --osrs-blue: #5e7fe0; /* Lunar sky blue */
+    --osrs-chat: #aeeeff; /* Mystic chat aura */
+    --osrs-background: #1a1a2d; /* Midnight blue base */
+    --osrs-border: #2f2f48; /* Soft moonstone border */
+    --osrs-panel: #25253b; /* Cool twilight panel */
+    --osrs-background-light: #32324a; /* Slight variation for depth */
+    --osrs-text: #f2f6ff; /* Pure moonlight */
+    --osrs-footer-brown: #2d2d42; /* Dim arcane stone */
 }
 body {
     max-width: 100vw;
     margin: 0px;
     padding: 0;
     background-color: var(--osrs-background);
+}
+
+body .navbar .navbar-brand {
+    color: var(--osrs-blue);
+    margin-right: 40px;
+    text-decoration: underline var(--osrs-blue);
+}
+
+#mainPageButtons h1 {
+    color: var(--osrs-blue);
+}
+
+#mainPageButtons .btn {
+    background-color: var(--osrs-gold);
+    border: 5px solid var(--osrs-blue);
+    font-weight: bold;
+}
+
+#mainPageButtons .btn:hover {
+    background-color: var(--osrs-yellow);
+    border: 5px solid var(--osrs-chat);
+}
+#mainPageButtons .btn:active {
+    border: 5px solid var(--osrs-red);
 }
 
 .navbar {
@@ -55,6 +144,31 @@ body {
 .navbar .nav-link {
     color: white;
 }
+
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 0;
+    height: 2px;
+    background-color: black;
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: var(--osrs-yellow);
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
 .navbar .nav-link.active {
     color: var(--osrs-chat);
 }
@@ -66,19 +180,34 @@ body {
     background-color: var(--osrs-background);
 }
 
+.main-container #loadMoreBtn {
+    width: 300px;
+    border: 5px solid var(--osrs-blue);
+    background-color: var(--osrs-gold);
+    font-weight: bold;
+}
+
 .main-container > h1 {
-    color: white;
+    color: var(--osrs-text);
 }
 
 .main-container .form-label {
-    color: white;
+    color: var(--osrs-text);
+}
+
+.main-container .form-control,
+.main-container .form-select,
+.main-container .form-control::placeholder {
+    color: var(--osrs-text);
+    border: none;
+    background-color: var(--osrs-panel);
 }
 
 .card {
     border-color: var(--osrs-border);
 }
 .card .card-footer {
-    background-color: #4f3a1a;
+    background-color: var(--osrs-footer-brown);
     border-color: var(--osrs-border);
 }
 .card .card-footer .btn {
@@ -89,7 +218,7 @@ body {
 
 .card h5 {
     background-color: var(--osrs-dark-brown);
-    color: white;
+    color: var(--osrs-text);
     padding: 4px;
 }
 .card .accordion .accordion-button,
@@ -100,7 +229,7 @@ body {
 }
 .card .accordion .accordion-button {
     background-color: var(--osrs-dark-brown);
-    color: white;
+    color: var(--osrs-text);
 }
 
 .card .accordion .accordion-button::after {
@@ -109,25 +238,25 @@ body {
 
 .card .accordion .accordion-body {
     background-color: var(--osrs-background);
-    color: white;
+    color: var(--osrs-text);
 }
 .card .accordion .accordion-body table.custom-striped-table {
     border: none;
 }
 .card .accordion .accordion-body table.custom-striped-table thead tr th {
     background-color: var(--osrs-background);
-    color: white;
+    color: var(--osrs-text);
 }
 .card .accordion .accordion-body table.custom-striped-table tbody tr:nth-child(odd) td {
     background-color: var(--osrs-background-light);
-    color: white;
+    color: var(--osrs-text);
 }
 .card .accordion .accordion-body table.custom-striped-table tbody tr:nth-child(even) td {
     background-color: var(--osrs-background);
-    color: white;
+    color: var(--osrs-text);
 }
 .card .accordion .accordion-body table.custom-striped-table tbody tr td a {
-    color: white;
+    color: var(--osrs-text);
     text-decoration: none;
 }
 .card .accordion .accordion-body table.custom-striped-table tbody tr td a:hover {
@@ -136,9 +265,9 @@ body {
 
 .card .card-body {
     background-color: var(--osrs-panel);
-    color: white;
+    color: var(--osrs-text);
 }
 .card .card-header {
     background-color: var(--osrs-brown);
-    color: white;
+    color: var(--osrs-text);
 }

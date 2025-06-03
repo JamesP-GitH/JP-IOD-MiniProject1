@@ -212,20 +212,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="./">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="#">Monsters</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Items</a>
+                            <a class="nav-link" href="/itemsDB.html">Items</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Prayers</a>
+                            <a class="nav-link" href="/prayersDB.html">Prayers</a>
                         </li>
                     </ul>
+                    <button id="theme-toggle" class="btn btn-outline-secondary my-3">Toggle Theme</button>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <input class="form-control mx-2 me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
@@ -272,7 +273,7 @@
                             <option value="comLvl-asc">Combat Level - Ascending</option>
                             <option value="comLvl-desc">Combat Level - Descending</option>
                             <option value="title-asc">Name - A-Z</option>
-                            <option value="title-desc">Name - A-Z</option>
+                            <option value="title-desc">Name - Z-A</option>
                         </select>
                     </div>
                     <div class="col-md-3">
@@ -281,14 +282,55 @@
                     </div>
                     <div class="col-md-3">
                         <label for="searchInput2" class="form-label h5">Combat Lvl</label>
-                        <input type="number" class="form-control" id="searchInput2" />
+                        <input type="number" class="form-control" min="0" max="785" id="searchInput2" />
                     </div>
                 </div>
             </div>
             <div class="container" id="monster-container"></div>
-            <button id="loadMoreBtn">Load More</button>
+            <button id="loadMoreBtn" class="btn my-5 text-center mx-auto">Load More</button>
         </div>
 
         <script type="module" src="/main.js"></script>
+        <script>
+            const input = document.getElementById("searchInput2");
+
+            input.addEventListener("input", () => {
+                const min = parseInt(input.getAttribute("min"), 10);
+                const max = parseInt(input.getAttribute("max"), 10);
+                let value = parseInt(input.value, 10);
+
+                if (isNaN(value)) return;
+
+                if (value < min) input.value = min;
+                if (value > max) input.value = max;
+            });
+
+            const themes = ["default", "mystic-mode", "desert-mode", "gothic-mode", "vampyre-mode", "arcane-mode"];
+            let current = 0;
+
+            const updateTheme = () => {
+                document.body.classList.remove(...themes);
+                if (current !== 0) {
+                    document.body.classList.add(themes[current]);
+                }
+                // Save the theme name
+                localStorage.setItem("theme", themes[current]);
+            };
+
+            // Load theme from localStorage on page load
+            window.addEventListener("DOMContentLoaded", () => {
+                const savedTheme = localStorage.getItem("theme");
+                if (savedTheme) {
+                    current = themes.indexOf(savedTheme);
+                    if (current === -1) current = 0; // fallback
+                    updateTheme();
+                }
+            });
+
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                current = (current + 1) % themes.length;
+                updateTheme();
+            });
+        </script>
     </body>
 </html>

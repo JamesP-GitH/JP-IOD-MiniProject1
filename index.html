@@ -43,18 +43,58 @@
                             <a class="nav-link" href="./monstersDB.html">Monsters</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Items</a>
+                            <a class="nav-link" href="/itemsDB.html">Items</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Prayers</a>
+                            <a class="nav-link" href="/prayersDB.html">Prayers</a>
                         </li>
                     </ul>
+                    <button id="theme-toggle" class="btn btn-outline-secondary my-3">Toggle Theme</button>
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <input class="form-control mx-2 me-2" type="search" placeholder="Search" aria-label="Search" />
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>
             </div>
         </nav>
+        <div class="container text-center py-5">
+            <div id="mainPageButtons" class="px-4">
+                <h1 class="mb-5">Old School RuneScape Database</h1>
+                <div class="justify-content-center align-items-center g-4 px-4">
+                    <a href="/itemsDB.html" class="btn btn-lg w-100 py-4 shadow mb-4 fw-bold fs-2">Item Database</a>
+                    <a href="/monstersDB.html" class="btn btn-lg w-100 py-4 shadow mb-4 fw-bold fs-2">Monster Database</a>
+                    <a href="/prayersDB.html" class="btn btn-lg w-100 py-4 shadow mb-4 fw-bold fs-2">Prayer Database</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const themes = ["default", "mystic-mode", "desert-mode", "gothic-mode", "vampyre-mode", "arcane-mode"];
+            let current = 0;
+
+            const updateTheme = () => {
+                document.body.classList.remove(...themes);
+                if (current !== 0) {
+                    document.body.classList.add(themes[current]);
+                }
+                // Save the theme name
+                localStorage.setItem("theme", themes[current]);
+            };
+
+            // Load theme from localStorage on page load
+            window.addEventListener("DOMContentLoaded", () => {
+                const savedTheme = localStorage.getItem("theme");
+                if (savedTheme) {
+                    current = themes.indexOf(savedTheme);
+                    if (current === -1) current = 0; // fallback
+                    updateTheme();
+                }
+            });
+
+            document.getElementById("theme-toggle").addEventListener("click", () => {
+                current = (current + 1) % themes.length;
+                updateTheme();
+            });
+        </script>
     </body>
 </html>
