@@ -106,6 +106,60 @@
     --osrs-text: #f2f6ff; /* Pure moonlight */
     --osrs-footer-brown: #2d2d42; /* Dim arcane stone */
 }
+.zamorakian-mode {
+    /* Zamorakian Chaos: Fire, Blood, Shadow */
+    --osrs-yellow: #ffcc66; /* Hellfire glow */
+    --osrs-gold: #e6973a; /* Molten gold */
+    --osrs-brown: #5b1f1f; /* Charred stone / bloodstained walls */
+    --osrs-dark-brown: #210b0b; /* Deep infernal shadow */
+    --osrs-black: #0a0000; /* Abyssal black */
+    --osrs-green: #94d13d; /* Corrupted green (chaotic poison) */
+    --osrs-red: #b00000; /* Blood red */
+    --osrs-blue: #6e4de9; /* Unstable arcane energy */
+    --osrs-chat: #ff6666; /* Aggressive red chat */
+    --osrs-background: #1b0c0c; /* Burnt battlefield black-red */
+    --osrs-border: #3d1212; /* Blood-chipped stone */
+    --osrs-panel: #2a0f0f; /* Infernal paneling */
+    --osrs-background-light: #391818; /* Slightly brighter scorched stone */
+    --osrs-text: #f9e8dc; /* Burnt parchment white */
+    --osrs-footer-brown: #3f1616; /* Smoldering footer base */
+}
+.guthix-mode {
+    /* Nature/Guthixian Theme */
+    --osrs-yellow: #e1f27c; /* Sun-dappled leaf */
+    --osrs-gold: #b7d45c; /* Forest gold / mossy shimmer */
+    --osrs-brown: #5e4a2e; /* Tree bark */
+    --osrs-dark-brown: #2f2416; /* Deep earth */
+    --osrs-black: #141d13; /* Dense forest shadow */
+    --osrs-green: #3fcf6e; /* Bright life energy */
+    --osrs-red: #cc574f; /* Wild berry / soft danger */
+    --osrs-blue: #4e9bbf; /* Stream water */
+    --osrs-chat: #8fe8c5; /* Fae glade whisper */
+    --osrs-background: #1d2a1f; /* Forest floor shadow */
+    --osrs-border: #3a4b32; /* Leaf-veined stone */
+    --osrs-panel: #2a3a2a; /* Mossy woodgrain UI */
+    --osrs-background-light: #374b37; /* Dappled sunlight patch */
+    --osrs-text: #eefae4; /* Pale sunlight / parchment */
+    --osrs-footer-brown: #3c2f1d; /* Tree root & soil tone */
+}
+.zanaris-mode {
+    /* Zanaris/Druidic Theme */
+    --osrs-yellow: #fff1a8; /* Moon pollen glow */
+    --osrs-gold: #dabaff; /* Ethereal lavender-gold */
+    --osrs-brown: #5c3a6f; /* Enchanted wood / fairy ring base */
+    --osrs-dark-brown: #3a264a; /* Deep feyroot / magical bark */
+    --osrs-black: #120f1a; /* Arcane twilight */
+    --osrs-green: #80ffbf; /* Soft fae green (glow) */
+    --osrs-red: #ff7aa2; /* Pixie blossom / mushroom pink */
+    --osrs-blue: #98b5ff; /* Star pond blue */
+    --osrs-chat: #c8fff4; /* Whispering glade text */
+    --osrs-background: #1e132a; /* Dreamrealm night sky */
+    --osrs-border: #403258; /* Moonlit stone outline */
+    --osrs-panel: #2d1e3d; /* Fairy glen shadows */
+    --osrs-background-light: #3e2e52; /* Enchanted thicket highlight */
+    --osrs-text: #f9f2ff; /* Moon-pale fey script */
+    --osrs-footer-brown: #4e3364; /* Fairy ring soil */
+}
 body {
     max-width: 100vw;
     margin: 0px;
